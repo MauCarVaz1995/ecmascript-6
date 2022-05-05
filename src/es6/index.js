@@ -106,8 +106,8 @@ let listOfNames = names.map(function (item){
 let listOfNames2 = names.map(item => console.log(item.name));
 
 const listOfNames3 = (name, age, country) => {
-    ...
-}
+    //...
+};
 const listOfNames4 = name => {
 
 }
@@ -130,3 +130,40 @@ helloPromise()
     .then(response => console.log(response))
     .then(() => console.log("hola"))
     .catch(error => console.log(error));
+
+//CLASES    
+class calculator{
+    constructor(){
+        this.valueA = 0;
+        this.valueB = 0;
+    }
+    sum(valueA, valueB){
+        this.valueA = valueA;
+        this.valueB =valueB;
+        return this.valueA + this.valueB;
+    }
+}
+
+const calc = new calculator();
+console.log(calc.sum(2,2));
+
+//IMPORT Y EXPORT
+
+import{hello} from "./module";
+hello();
+
+//GENERATORS
+
+function* helloWorld(){
+    if(true){
+        yield "Hello, ";
+    }
+    if(true){
+        yield "World";
+    }
+};
+
+const generatorHello = helloWorld();
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
