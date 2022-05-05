@@ -29,5 +29,33 @@ console.log("food".padEnd(12, "  ----"));
 const obj ={
     frontend: "Mauricio",
     backend: "Alberto",
-    design: "Kevin", //la coma para no cometer errore.
+    design: "Kevin", //la coma para no cometer errores.
 }
+
+//ASYNC Y AWAIT
+const helloWorld = () => {
+    return new Promise((resolve, reject) => {
+      (false)
+        ? setTimeout(() => resolve('Hello World'), 3000)
+        : reject(new Error('Test Error'))
+    })
+  };
+  
+
+const helloAsync = async () => {
+    const hello = await helloWorld();
+    console.log(hello);
+};
+
+helloAsync();
+
+//MANEJO DE ERRORES
+
+const anotherFunction = async () => {
+    try {
+      const hello = await helloWorld();
+      console.log(hello);
+    } catch (error) {
+      console.log(error);
+    }
+  };
