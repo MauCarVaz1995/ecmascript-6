@@ -81,3 +81,52 @@ console.log(globalVar);
 const a = "b";
 a = "c";
 
+//PROPIEDAD DE OBJETOS MEJORADA
+
+let name = "Mauricio";
+let edad = 26;
+
+obj = {name: name, edad: edad}; //es5
+obj2 = {nombre, edad};//es6
+
+console.log(obj2);
+
+//ARROW FUNCTIONS
+//pasarle una función a un array
+
+const names = [
+    {name: "Mauricio", age: 32},
+    {name: "Yolanda", age: 45}
+]
+
+let listOfNames = names.map(function (item){
+    console.log(item.name)
+})
+
+let listOfNames2 = names.map(item => console.log(item.name));
+
+const listOfNames3 = (name, age, country) => {
+    ...
+}
+const listOfNames4 = name => {
+
+}
+
+const square = num => num*num;
+
+//PROMESAS
+
+const helloPromise =() =>{
+    return new Promise((resolve, reject) => {
+        if(true){
+            resolve("Hey!");
+        }else{
+            reject("Ups!!");
+        }
+    });
+}
+
+helloPromise()
+    .then(response => console.log(response))
+    .then(() => console.log("hola"))
+    .catch(error => console.log(error));
